@@ -1,0 +1,32 @@
+.home {
+  @include flex(column, center, flex-start);
+  height: 100%;
+
+  &-content {
+    @include flex(column, center, flex-start);
+    gap: 24px;
+    padding-top: 20px;
+  }
+
+  &-title {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 660px;
+    font-weight: 700;
+    text-shadow: $text-shadow-3d;
+    font-size: var(--font-size-xl);
+
+    &__font-size {
+      font-size: var(--font-size-xl) !important;
+    }
+  }
+
+  &-description {
+    max-width: 320px;
+  }
+
+  button {
+    margin-top: 40px;
+  }
+}

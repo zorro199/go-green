@@ -1,0 +1,141 @@
+.footer {
+  @include flex(column, center, center);
+  width: 100vw;
+}
+
+.white-block {
+  position: relative;
+}
+
+.contacts {
+  @include flex(column, flex-end, center);
+  gap: 12px;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 12;
+}
+
+.socials {
+  @include flex(row, center, center);
+  gap: 12px;
+
+  @include mobile {
+    gap: 24px;
+  }
+  @include tablet {
+    gap: 36px;
+  }
+  @include desktop {
+    gap: 48px;
+  }
+}
+
+.social {
+  padding: 8px;
+  background: $color-bg-grey;
+  @include flex(row, center, center);
+  border-radius: 50%;
+  transition: $cubic;
+
+  img {
+    width: 20px;
+    height: 20px;
+
+    @include mobile {
+      width: 24px;
+      height: 24px;
+    }
+    @include tablet {
+      width: 36px;
+      height: 36px;
+    }
+    @include desktop {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &:hover {
+    background: linear-gradient(
+      to bottom,
+      $color-green-light-opacity 25%,
+      $color-green-light 25%,
+      $color-green-accent 50%
+    );
+  }
+}
+
+.leaves {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(22%, 1fr));
+  justify-content: center;
+  width: 100vw;
+
+  @include tablet {
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  }
+  @include desktop {
+    grid-template-columns: repeat(auto-fill, minmax(18%, 1fr));
+  }
+}
+
+.leaf {
+  padding: 10px 2vw;
+  width: 30px;
+  height: 30px;
+
+  @include mobile {
+    padding: 15px 4vw;
+    width: 40px;
+    height: 40px;
+  }
+  @include tablet {
+    padding: 20px 6vw;
+    width: 50px;
+    height: 50px;
+  }
+  @include desktop {
+    padding: 30px 8vw;
+    width: 64px;
+    height: 64px;
+  }
+}
+
+@for $i from 0 through 9 {
+  [data-rotation="#{$i}"] {
+    transform: rotate($i * 90deg);
+    padding-top: #{$i * 12}px;
+  }
+}
+
+.black-block {
+  @include flex(column, center, center);
+  background-image: url("/footer.jpg");
+  width: 100%;
+  position: relative;
+}
+
+.black-overlay {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: $color-overlay;
+}
+
+.black-block,
+.black-overlay {
+  height: 100px;
+
+  @include mobile {
+    height: 150px;
+  }
+  @include tablet {
+    height: 200px;
+  }
+  @include desktop {
+    height: 250px;
+  }
+}

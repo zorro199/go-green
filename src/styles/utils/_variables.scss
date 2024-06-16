@@ -1,0 +1,51 @@
+$color-grey-dark: #545454;
+$color-grey-light: #d9d9d9;
+$color-grey: #8d8d8d;
+$color-bg-grey: #cfcfcf;
+$color-bg-green-opacity: rgb(169 228 97 / 9%);
+$color-bg-green-opacity-1: rgb(133 251 117 / 7%);
+$color-bg-grey-opacity-right: linear-gradient(
+  271deg,
+  rgba(0, 0, 0, 0.25) 0.85%,
+  rgba(0, 0, 0, 0) 99.57%
+);
+$color-green-accent: #7da85d;
+$color-green-light: #daffd4;
+$color-green-light-opacity: #daffd414;
+$color-black: #111211;
+$color-white: #fff;
+$color-white-green: #f8fff3;
+$color-bg-linear: linear-gradient(
+  180deg,
+  rgba(0, 0, 0, 0.5) 0%,
+  rgba(0, 0, 0, 0) 83.65%
+);
+$color-overlay: rgba(0, 0, 0, 0.8);
+
+//text-shadow
+$text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5);
+$text-shadow-3d: 0px 4px 3px rgba(0, 0, 0, 0.25);
+
+// hover
+$color-hover-btn-text: #000000;
+$color-hover-btn-bg: rgb(34, 76, 38);
+$color-hover-icon-fill: #292929;
+$color-hover-icon-bg: #7c7c7c;
+$color-hover-text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.545);
+
+//screens
+$screen-mobile: 480px;
+$screen-tablet: 768px;
+$screen-desktop: 1200px;
+
+//cubic
+$cubic: all 0.3s ease;
+
+//font-size
+:root {
+  --font-size-xs: 16px;
+  --font-size-sm: 20px;
+  --font-size-md: 24px;
+  --font-size-lg: 48px;
+  --font-size-xl: 66px;
+}

@@ -1,0 +1,99 @@
+.about {
+  @include flex(column, space-between, center);
+  gap: 30px;
+
+  @include mobile {
+    gap: 40px;
+  }
+  @include tablet {
+    gap: 55px;
+  }
+  @include desktop {
+    gap: 70px;
+  }
+
+  &-block {
+    @include flex(row, space-between, center);
+    gap: 30px;
+    position: relative;
+  }
+
+  &-img {
+    opacity: 0.5;
+
+    &__1 {
+      position: absolute;
+      top: -200px;
+      right: -100px;
+      width: 130%;
+      z-index: 3;
+
+      @include mobile {
+        width: 100%;
+        right: -170px;
+      }
+      @include tablet {
+        width: 90%;
+        right: -220px;
+      }
+      @include desktop {
+        width: 80%;
+      }
+    }
+    &__2 {
+      width: 50%;
+    }
+    &__3 {
+      width: 40%;
+      margin-top: -100px;
+    }
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.text-block {
+  @include flex(column, center, center);
+  gap: 30px;
+  width: 50%;
+  text-align: center;
+  z-index: 10;
+
+  p {
+    width: 88%;
+  }
+
+  &__left {
+    text-align: left;
+    align-items: start;
+  }
+
+  &__right {
+    text-align: right;
+    align-items: end;
+    align-self: flex-start;
+  }
+}
+
+ul.about > li.about-block:first-child .text-block {
+  width: 70%;
+  p {
+    width: 140%;
+  }
+
+  @include tablet {
+    width: 77%;
+    p {
+      width: 122%;
+    }
+  }
+
+  @include desktop {
+    width: 40%;
+    p {
+      width: 100%;
+    }
+  }
+}

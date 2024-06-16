@@ -1,0 +1,294 @@
+.header {
+  height: 100px;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100px;
+    display: block;
+    background: $color-bg-linear;
+    z-index: 3;
+
+    @include mobile {
+      height: 120px;
+    }
+    @include tablet {
+      height: 150px;
+    }
+    @include desktop {
+      height: 170px;
+    }
+  }
+
+  &__black-gradient {
+    &::before {
+      height: 60px;
+      background: $color-grey;
+
+      @include mobile {
+        height: 65px;
+      }
+      @include tablet {
+        height: 80px;
+      }
+      @include desktop {
+        height: 90px;
+      }
+    }
+  }
+
+  &-container {
+    @include flex(row, space-between, center);
+    padding: 5px 12px;
+  }
+}
+
+.nav {
+  @include flex(row, space-between, center);
+  gap: 32px;
+  color: $color-white;
+  text-shadow: $text-shadow;
+  font-size: var(--font-size-md);
+  z-index: 7;
+
+  @include desktop {
+    font-size: var(--font-size-sm);
+  }
+
+  a:hover {
+    text-shadow: $text-shadow-3d;
+  }
+
+  .active:hover {
+    text-shadow: none;
+  }
+
+  &-column {
+    @include flex(column, center, center);
+    gap: 12px;
+  }
+}
+
+.active {
+  color: $color-green-accent;
+  padding-bottom: 1px;
+  a {
+    position: absolute;
+  }
+
+  &::after {
+    display: block;
+    content: "";
+    position: relative;
+    bottom: 3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 6px;
+    background: $color-green-accent;
+  }
+}
+
+.burger {
+  &-button {
+    border: none;
+    z-index: 10;
+    background: transparent;
+    display: grid;
+    place-content: center;
+
+    &:hover {
+      .icon {
+        background: $color-green-light;
+
+        &::after,
+        &::before {
+          background: $color-green-light;
+        }
+      }
+    }
+
+    &:active {
+      .icon {
+        background: $color-green-accent;
+
+        &::after,
+        &::before {
+          background: $color-green-accent;
+        }
+      }
+    }
+
+    .icon {
+      background: $color-white;
+
+      position: relative;
+      transition-delay: 0.4s;
+      width: 25px;
+      height: 3px;
+
+      @include tablet {
+        width: 35px;
+        height: 4px;
+      }
+      @include desktop {
+        width: 40px;
+        height: 5px;
+      }
+      &::after,
+      &::before {
+        background: $color-white;
+        content: "";
+        display: block;
+        position: absolute;
+        transition: top 0.4s 0.4s, transform 0.4s 0s;
+        width: 25px;
+        height: 3px;
+
+        @include tablet {
+          width: 35px;
+          height: 4px;
+        }
+        @include desktop {
+          width: 40px;
+          height: 5px;
+        }
+      }
+      &::after {
+        top: 8px;
+
+        @include tablet {
+          top: 12px;
+        }
+      }
+      &::before {
+        top: -8px;
+
+        @include tablet {
+          top: -12px;
+        }
+      }
+    }
+
+    &.open {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-content: center;
+      z-index: 110;
+      position: absolute;
+      top: 0;
+      right: 20px;
+      background: $color-grey-light;
+      padding: 30px;
+
+      @include mobile {
+        right: -59px;
+        width: 40px;
+        height: 40px;
+      }
+
+      &:hover {
+        .icon {
+          background: transparent;
+
+          &::after,
+          &::before {
+            background: $color-green-light;
+          }
+        }
+      }
+
+      &:active {
+        .icon {
+          background: transparent;
+
+          &::after,
+          &::before {
+            background: $color-white;
+          }
+        }
+      }
+
+      .icon {
+        background: transparent;
+        position: relative;
+        &::after,
+        &::before {
+          background: $color-green-accent;
+          transition: top 0.4s 0s, transform 0.4s 0.4s;
+        }
+        &::after {
+          top: 0;
+          transform: rotate(45deg);
+        }
+        &::before {
+          top: 0px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &-backdrop {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $color-overlay;
+
+    &__active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-background {
+    opacity: 0;
+    z-index: 102;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $color-grey-light;
+    transform: translateY(-100%);
+
+    @include mobile {
+      width: 400px;
+    }
+
+    &__active {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+  }
+
+  &-column {
+    display: flex;
+    z-index: 103;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 64px 32px;
+    overflow: auto;
+    gap: 32px;
+  }
+}

@@ -1,0 +1,139 @@
+.main {
+  padding-top: 100px;
+
+  @include mobile {
+    padding-top: 110px;
+  }
+  @include tablet {
+    padding-top: 140px;
+  }
+  @include desktop {
+    padding-top: 170px;
+  }
+}
+
+.button {
+  @include flex(row, center, center);
+  background: $color-green-accent;
+  border-radius: 16px;
+  padding: 16px 32px;
+  color: $color-white;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: capitalize;
+  border: none;
+
+  &:hover {
+    text-shadow: $text-shadow;
+    box-shadow: inset 0.1px 0.1px 3px $color-black;
+  }
+}
+
+.company-name {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  text-shadow: $text-shadow-3d;
+  color: $color-white;
+
+  &__second-word {
+    color: $color-green-accent;
+  }
+}
+
+.logo {
+  @include flex(row, center, center);
+  gap: 20px;
+  z-index: 10;
+
+  &-svg {
+    width: 40px;
+    height: 40px;
+
+    @include mobile {
+      width: 50px;
+      height: 50px;
+    }
+    @include tablet {
+      width: 60px;
+      height: 60px;
+    }
+    @include desktop {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+.banner {
+  background: $color-green-light;
+  border-radius: 16px;
+  padding: 14px 20px 42px;
+  margin: 0 auto;
+
+  &-main {
+    width: 70%;
+  }
+
+  &-person {
+    width: 90%;
+  }
+
+  &-column {
+    &__main {
+      @include flex(column, center, center);
+      gap: 20px;
+      text-align: center;
+    }
+    &__person {
+      @include flex(column, flex-start, flex-start);
+      gap: 30px;
+      text-align: left;
+      padding: 40px 0 14px;
+    }
+  }
+
+  &-row {
+    @include flex(column, center, center);
+    padding-right: 30px;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 30px;
+    }
+  }
+
+  &-title {
+    color: $color-black;
+    text-transform: capitalize;
+
+    &__person {
+      text-shadow: $text-shadow-3d;
+    }
+  }
+
+  &-description {
+    width: 80%;
+  }
+
+  &-photo {
+    border-radius: 50%;
+    padding: 20px 0 0 20px;
+    width: 100px;
+    height: 100px;
+
+    @include mobile {
+      width: 150px;
+      height: 150px;
+    }
+    @include tablet {
+      width: 180px;
+      height: 180px;
+    }
+    @include desktop {
+      width: 280px;
+      height: 280px;
+    }
+  }
+}

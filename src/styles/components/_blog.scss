@@ -1,0 +1,192 @@
+.blog {
+  &-content {
+    @include flex(column, center, flex-start);
+    gap: 50px;
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &-sections {
+    @include flex(column, center, flex-start);
+    gap: 30px;
+
+    @include tablet {
+      padding-top: 200px;
+      gap: 88px;
+      width: 40%;
+    }
+  }
+
+  &-section {
+    @include tablet {
+      width: 40%;
+    }
+    @media screen and (min-width: 855px) {
+      width: 100%;
+    }
+  }
+
+  &-sectionTitle {
+    font-size: var(--font-size-md);
+    font-weight: 700;
+    color: $color-black;
+    position: relative;
+    margin-bottom: 30px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 65px;
+      height: 2px;
+      border-radius: 7px;
+      background: $color-green-accent;
+    }
+  }
+}
+
+.posts {
+  @include flex(column, center, center);
+  gap: 40px;
+}
+
+.post {
+  @include flex(column, center, center);
+  gap: 30px;
+  border: 1px solid $color-grey;
+  width: 100%;
+  min-width: 300px;
+  padding-bottom: 75px;
+  cursor: pointer;
+
+  @include mobile {
+    min-width: 400px;
+  }
+  @include tablet {
+    min-width: 450px;
+  }
+  @include desktop {
+    min-width: 575px;
+  }
+
+  &-img {
+    width: 100%;
+    height: auto;
+  }
+
+  &-content {
+    @include flex(column, center, flex-start);
+    gap: 16px;
+    padding: 0 20px 0 24px;
+  }
+
+  &-info {
+    @include flex(row, center, center);
+    gap: 30px;
+
+    &__user,
+    &__comment {
+      @include flex(row, center, center);
+      gap: 7px;
+    }
+  }
+
+  &-title {
+    font-weight: 700;
+    color: $color-black;
+  }
+
+  &-description {
+    width: 90%;
+  }
+
+  &-button {
+    align-self: end;
+    margin-right: 70px;
+  }
+}
+
+.recent {
+  &-posts {
+    @include flex(column, center, flex-start);
+    gap: 24px;
+  }
+
+  &-block {
+    @include flex(row, flex-start, center);
+    gap: 24px;
+    cursor: pointer;
+  }
+
+  &-text {
+    @include flex(column, center, flex-start);
+    gap: 12px;
+  }
+
+  &-title {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: $color-black;
+  }
+
+  &-date {
+    font-size: var(--font-size-xs);
+    font-style: normal;
+    font-weight: 700;
+    color: $color-grey-light;
+  }
+}
+
+.flicks {
+  @include flex(row, flex-start, center);
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  min-width: 300px;
+
+  @include mobile {
+    min-width: 400px;
+  }
+  @media screen and (min-width: 768px) {
+    min-width: 300px;
+  }
+  @media screen and (min-width: 855px) {
+    width: 350px;
+  }
+}
+
+.flick {
+  cursor: pointer;
+  width: 90px;
+  height: 88px;
+}
+
+.tags {
+  @include flex(row, flex-start, center);
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 14px;
+  width: 100%;
+
+  @include desktop {
+    width: 400px;
+  }
+}
+
+.margin-top {
+  margin-top: 16px;
+}
+
+.tag {
+  border-radius: 8px;
+  background: $color-grey-light;
+  padding: 12px 54px;
+  cursor: pointer;
+
+  p {
+    font-weight: 700;
+  }
+}

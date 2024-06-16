@@ -1,0 +1,164 @@
+.services {
+  @include flex(column, center, center);
+  gap: 100px;
+
+  &-section {
+    @include flex(column, center, center);
+    gap: 40px;
+  }
+
+  &-title {
+    color: $color-black;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 122%;
+
+    span {
+      color: $color-green-accent;
+    }
+  }
+
+  &-subtitle {
+    text-transform: capitalize;
+    color: $color-grey-dark;
+    position: relative;
+
+    &__empty {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -85px;
+        width: 180px;
+        height: 1px;
+        background: $color-grey;
+      }
+    }
+    &__with-text {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 20vw;
+        height: 1px;
+        background: $color-grey;
+      }
+
+      &::before {
+        left: -22vw;
+        top: 50%;
+      }
+
+      &::after {
+        top: 55%;
+        right: -22vw;
+
+        @include desktop {
+          left: 170px;
+        }
+      }
+    }
+  }
+
+  &-textContent {
+    @include flex(column, center, center);
+
+    @include tablet {
+      flex-direction: row;
+      gap: 40px;
+    }
+    @include desktop {
+      gap: 20px;
+    }
+
+    &__img {
+      display: none;
+
+      @include desktop {
+        max-height: 450px;
+        display: block;
+      }
+    }
+
+    &__list {
+      @include flex(column, center, center);
+      gap: 72px;
+    }
+  }
+}
+
+.firstSection-textBlock {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 422px;
+  @include desktop {
+    align-items: center;
+    gap: 24px;
+  }
+
+  &__left {
+    justify-content: end;
+    text-align: right;
+    @include desktop {
+      flex-direction: row;
+    }
+
+    &__text {
+      align-items: end;
+    }
+  }
+
+  &__right {
+    justify-content: start;
+    text-align: left;
+    align-items: end;
+    @include desktop {
+      flex-direction: row-reverse;
+      align-items: start;
+    }
+
+    &__text {
+      align-items: start;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    height: 100%;
+
+    @include desktop {
+      height: 110px;
+    }
+
+    h4 {
+      color: $color-green-accent;
+      font-weight: 600;
+    }
+
+    p {
+      min-width: 265px;
+      max-width: 320px;
+    }
+  }
+
+  &__img {
+    @include flex(row, center, center);
+    background: $color-grey-light;
+    border-radius: 50%;
+    padding: 12px;
+
+    img {
+      width: 50px;
+      height: 50px;
+
+      @include desktop {
+        width: 72px;
+        height: 72px;
+      }
+    }
+  }
+}
