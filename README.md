@@ -7,9 +7,7 @@
 ![about page (1)](./src/assets/screenshots/2.png)
 ![about page (2)](./src/assets/screenshots/3.png)
 ![services page (1)](./src/assets/screenshots/4.png)
-![services page (2)](./src/assets/screenshots/5.png)
 ![blog page (1)](./src/assets/screenshots/6.png)
 ![blog page (2)](./src/assets/screenshots/7.png)
 ![blog page (3)](./src/assets/screenshots/8.png)
-![contact page](./src/assets/screenshots/9.png)
 
