@@ -11,12 +11,12 @@ export function App() {
     <div id="bg">
       <div id="right-gradient">
         <Routes>
-          <Route path="/" element={<SharedLayout />}>
+          <Route path="/go-green" element={<SharedLayout />}>
             <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="blog" element={<Blog />} />
-            <Route path="services" element={<Services />} />
-            <Route path="contact" element={<Contact />} />
+            <Route path="/go-green/about" element={<About />} />
+            <Route path="/go-green/blog" element={<Blog />} />
+            <Route path="/go-green/services" element={<Services />} />
+            <Route path="/go-green/contact" element={<Contact />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
@@ -24,12 +24,12 @@ export function App() {
     </div>
   ) : (
     <Routes>
-      <Route path="/" element={<SharedLayout />}>
+      <Route path="/go-green" element={<SharedLayout />}>
         <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="services" element={<Services />} />
-        <Route path="contact" element={<Contact />} />
+        <Route path="/go-green/about" element={<About />} />
+        <Route path="/go-green/blog" element={<Blog />} />
+        <Route path="/go-green/services" element={<Services />} />
+        <Route path="/go-green/contact" element={<Contact />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
