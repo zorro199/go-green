@@ -11,7 +11,7 @@ export function Navigation({ direction = "row", onClick }: Props) {
   return (
     <nav className={`nav ${direction === "column" ? "nav-column" : ""}`}>
       {pages.map((page, index) => (
-        <NavLink key={index} to={`/${page.route}`} onClick={onClick}>
+        <NavLink key={index} to={`/go-green/${page.route}`} onClick={onClick}>
           {page.title}
         </NavLink>
       ))}
